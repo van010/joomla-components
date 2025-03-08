@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="config" addfieldpath="/administrator/components/com_jamegafilter/models/fields">
+		<field name="time" type="number" default="3600" label="COM_JAMEGAFILTER_TIME" description="COM_JAMEGAFILTER_TIME_DESC"/>
+		<field 
+			name="fids" 
+			type="jamgfilter" 
+			label="COM_JAMEGAFILTER_FILTERS" 
+			multiple="true"
+		/>
+		<field name="crontoken" type="crontoken" label="COM_JAMEGAFILTER_CRON_URL" description="COM_JAMEGAFILTER_CRON_URL_DESC" default="" />
+	</fieldset>
+</form>

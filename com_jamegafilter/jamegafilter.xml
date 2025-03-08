@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+
+	<name>JAMEGAFILTER</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>Jan 12th,2024</creationDate>
+	<author>Joomlart</author>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>https://www.joomlart.com</authorUrl>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<!--  The version string is recorded in the components table -->
+	<version>2.0.4</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>
+	<![CDATA[
+		Joomla search and filter extension - JA Megafilter is a powerful and flexible search and filtering system for your Joomla site. Supports multiple filter setup for your Joomla site. The Filter Joomla extension supports K2 component, E-Shop, Virtuemart, Hikashop, JoomShopping. J2Store support is coming soon along with few more.
+		<h2>NOTICE !</h2>
+		<p style="color:red;"><b>Version 1.1.0 has changes about layout management system so user has to access back-end, change settings and save.</b></p>
+	]]>
+	</description>
+
+	<updateservers>
+    <server type="extension">http://update.joomlart.com/service/tracking/j16/com_jamegafilter.xml</server>
+    </updateservers>
+	
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>jamegafilter.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+		<folder>assets</folder>
+		<folder>layouts</folder>
+		<folder>models</folder>
+	</files>
+
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.com_jamegafilter.ini</language>
+	</languages>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link='index.php?option=com_jamegafilter'>COM_JAMEGAFILTER_MENU</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>jamegafilter.php</filename>
+			<filename>helper.php</filename>
+			<filename>base.php</filename>
+			<filename>controller.php</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<folder>sql</folder>
+			<folder>assets</folder>
+			<folder>tables</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<folder>controllers</folder>
+		</files>
+		<languages folder="admin/language">
+        		<language tag="en-GB">en-GB/en-GB.com_jamegafilter.ini</language>
+                <language tag="en-GB">en-GB/en-GB.com_jamegafilter.sys.ini</language>
+		</languages>
+	</administration>
+
+</extension>

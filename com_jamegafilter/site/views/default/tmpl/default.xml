@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JAMEGAFILTER_DEFAULT_LAYOUT">
+		<message>COM_JAMEGAFILTER_DEFAULT_LAYOUT_DESC</message>
+	</layout>
+	<fields
+			name="request"
+			addfieldpath="/administrator/components/com_jamegafilter/models/fields"
+			>
+		<fieldset name="request">
+			<field name="id" type="jamgfilter" label="COM_JAMEGAFILTER_ID" description="COM_JAMEGAFILTER_ID_DES" />
+			<field name="jalayout" type="jalayout" label="COM_JAMEGAFILTER_JALAYOUT" description="COM_JAMEGAFILTER_JALAYOUT_DESC" />
+			<field name="itemperrow" type="list" default="5" label="COM_JAMEGAFILTER_ROWS" description="COM_JAMEGAFILTER_ROWS_DESC">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+			  <option value="6">6</option>
+			  <option value="7">7</option>
+			  <option value="8">8</option>
+			  <option value="9">9</option>
+			  <option value="10">10</option>
+			</field>
+			<field name="itempercol" type="list" default="3" label="COM_JAMEGAFILTER_COLUMNS" description="COM_JAMEGAFILTER_COLUMNS_DESC">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+			  <option value="6">6</option>
+			  <option value="7">7</option>
+			  <option value="8">8</option>
+			  <option value="9">9</option>
+			  <option value="10">10</option>
+			</field>
+
+			<field name="default_result_view" type="list" default="grid" label="COM_JAMEGAFILTER_DEFAULT_RESULT_VIEW" description="COM_JAMEGAFILTER_DEFAULT_RESULT_VIEW_DESC">
+			  <option value="grid">Grid</option>
+			  <option value="list">List</option>
+			</field>
+
+			<field name="show_more" type="number" default="0" label="COM_JAMEGAFILTER_SHOW_MORE" description="COM_JAMEGAFILTER_SHOW_MORE_DESC" />
+
+			<field name="fullpage" type="radio" default="1" label="COM_JAMEGAFILTER_SHOW_FILTER_BAR" description="COM_JAMEGAFILTER_SHOW_FILTER_BAR_DESC" class="btn-group btn-group-yesno">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			
+			<field name="sticky" type="radio" default="0"
+				   label="COM_JAMEGAFILTER_STICKY_SIDEBAR"
+				   description="COM_JAMEGAFILTER_STICKY_SIDEBAR_DESC"
+				   class="btn-group btn-group-yesno" showon="fullpage:1[AND]direction:vertical">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			
+			<field name="scrolltop" type="radio" default="1" label="COM_JAMEGAFILTER_SCROLL_TOP" description="COM_JAMEGAFILTER_SCROLL_TOP_DESC" class="btn-group btn-group-yesno">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="autopage" type="radio" default="0" label="COM_JAMEGAFILTER_AUTO_PAGE" description="COM_JAMEGAFILTER_AUTO_PAGE_DESC" class="btn-group btn-group-yesno">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+
+			
+			<field name="direction" type="list" default="vertical" label="COM_JAMEGAFILTER_DIRECTION" description="COM_JAMEGAFILTER_DIRECTION_DESC">
+				<option value="vertical">VERTICAL</option>
+				<option value="sb-horizontal">HORIZONTAL</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>
