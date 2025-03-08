@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+	<name>com_jalang</name>
+	<author>JoomlArt</author>
+	<creationDate>Feb 14th, 2025</creationDate>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.2.2</version>
+	<description>
+	<![CDATA[
+	<div align="left">
+    <h1>JA Multi Language Component for Joomla!</h1>
+    <div style='font-weight: normal'>
+        <p><span style='color: #ff6600;'><strong>Features:</strong></span>
+         This component aims to support for multi langual site. It puts the translating process at ease for all content types: Category, Article, Module, Menu ... from selected language to others.</p>
+        <strong><span style='color: #ff0000;'>Usage Instructions:</span></strong><br />
+        <ul>
+            <li>Get the component installed in your site</li>
+            <li>Add your Bing API: Client ID and Client Secret Key</li>
+            <li>Select langauge to translate from</li>
+            <li>Select langauges to be translated to</li>
+            <li>Enable plugin System - Language Filter and module Language Switcher</li>
+        </ul>
+        <strong><span style='color: #ff0000;'>Upgrade Methods:</span><br /></strong>
+        <ul>
+            <li>You can overwrite a new version of this extension overthe existing one with JA Extension Manager component. The uninstallation of the older version is not required. </li>
+            <li>Please remember to always back up any customized files before proceed toward any upgrades.</li>
+        </ul>
+        <span style='color: #008000;'><strong>Links:</strong></span><br />
+        <ul>
+         <li><a target="_blank" href="http://joomlart.com/documentation/joomla-component/ja-multilingual">Documentation</a></li>
+		 <li><a target='_blank' href="https://www.joomlart.com/joomla/extensions/ja-multilingual-component">Updates &amp; Versions</a></li>
+		 <li><a target='_blank' href="https://www.joomlart.com/forums/t/ja-multilingual-component">Get Support</a></li>
+		</ul>
+		<p>Copyright 2004 - 2022 <a href="http://www.joomlart.com/" title="Visit Joomlart.com!">JoomlArt.com</a>.</p>
+		</div>
+		</div>
+		]]>
+	</description>
+    
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">installer/sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">installer/sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    
+    <update>
+        <schemas>
+            <schemapath type="mysql">installer/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+	<administration>
+        <menu link="option=com_jalang" img="components/com_jalang/asset/joomlart.png">COM_JALANG</menu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>jalang.php</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<folder>asset</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>installer</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">installer/language/en-GB.com_jalang.ini</language>
+			<language tag="en-GB">installer/language/en-GB.com_jalang.sys.ini</language>
+		</languages>
+	</administration>
+	<!--<install>
+		<sql folder="admin">
+			<file driver="mysql" charset="utf8">installer/sql/install.jalang.sql</file>
+		</sql>
+	</install>-->
+	<scriptfile>script.jalang.php</scriptfile>
+    <updateservers>
+        <server type="extension" priority="1" name="JA Multilingual">http://update.joomlart.com/service/tracking/j31/com_jalang.xml</server>
+    </updateservers>
+</extension>

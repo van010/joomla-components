@@ -1,0 +1,11 @@
+body {
+    background: none repeat scroll 0 0 #F9F9F9;
+    color: #666666;
+    font: 12px "Lucida Console","Courier New",serif;
+    margin: 0;
+    padding: 5px 10px;
+    line-height: 14px;
+}
+
+.success {color: #008000;}
+.failed {color: #ff0000;}

@@ -1,0 +1,92 @@
+/* TABLE FORM
+--------------------------------------------------------- */
+#ja-table-form,
+#article-list {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+#ja-table-form tr:hover td,
+#article-list tr:hover td {
+  background: #ffffed !important;
+}
+
+#ja-table-form th,
+#article-list th {
+  background: #f0f0f0;
+  color: #333;
+}
+
+#ja-table-form a.modal,
+#article-list a.modal {
+    background: url("icon-open-popup.png") right center no-repeat transparent;
+    padding: 0 15px 0 0;
+}
+
+#ja-table-form th.separator,
+#ja-table-form td.separator,
+#article-list th.separator,
+#article-list td.separator {
+  border-left: 1px solid #ddd;
+  text-align: center;
+}
+
+#ja-table-form a.modal,
+#article-list a.modal {
+  font-weight: bold;
+}
+
+#article-list td span {
+  color: #666;
+  font-size: 92%;
+}
+
+#ja-table-form td ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#ja-table-form td ol li {
+  border-bottom: 1px solid #eee;
+  padding: 7px 0;
+}
+
+#ja-table-form.vertical th {
+  background: #f9f9f9;
+  border-right: 1px solid #ddd;
+}
+
+#ja-table-form.vertical td {
+  background-color: #fff;
+}
+
+#ja-table-form.vertical tr:hover td {
+  background: transparent !important;
+}
+
+#ja-table-form.vertical tr.last td {
+  background: #f9f9f9 !important;
+}
+
+.warning {
+  background-color: #f8f5d2;
+  border: 1px solid #cccaad;
+  padding: 20px;
+  margin: 10px 0 30px;
+}
+
+#com-jalang-translating {
+  padding-bottom: 5px;
+}
+
+fieldset.adminform legend {
+  margin-bottom: 7px;
+}
+
+.tran-result-iframe {
+  width: 100%;
+}

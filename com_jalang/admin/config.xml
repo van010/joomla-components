@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+    <fieldset
+            addfieldpath="/administrator/components/com_jalang/asset/elements"
+            name="translator_service"
+            label="TRANSLATION_SERVICE"
+            description="">
+
+        <field
+                name="translator_api_active"
+                type="list"
+                class="btn-group"
+                label="TRANSLATOR_API_ACTIVE_LABEL"
+                description="TRANSLATOR_API_ACTIVE_DESC"
+                default="bing">
+            <option value="bing">MICROSOFT_AZURE</option>
+            <option value="google">GOOGLE</option>
+            <option value="duplicate">DUPLICATE</option>
+        </field>
+
+        <field
+                name="bing_client_id"
+                type="password"
+                size="20"
+                showon="translator_api_active:bing"
+                label="BING_CLIENT_ID_LABEL"
+                description="BING_CLIENT_ID_DESC"
+                default=""
+        />
+
+        <field
+                name="azure_location"
+                type="text"
+                size="20"
+                showon="translator_api_active:bing"
+                label="AZURE_LOCATION"
+                description="AZURE_LOCATION_DESC"
+                default=""
+        />
+
+        <field
+                name="google_browser_api_key"
+                type="password"
+                size="40"
+                showon="translator_api_active:google"
+                label="GOOGLE_BROWSER_API_KEY_LABEL"
+                description="GOOGLE_BROWSER_API_KEY_DESC"
+                default=""
+        />
+
+        <field name="duplicate_language_code" type="list" default="0" showon="translator_api_active:duplicate"
+               label="DUPLICATE_LANGUAGE_CODE" description="DUPLICATE_LANGUAGE_CODE_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JLANGUAGE_CODE</option>
+            <option value="2">LANGUAGE_TAG</option>
+        </field>
+
+    </fieldset>
+
+    <fieldset
+            name="basic"
+            label="Settings"
+            description="">
+        <field
+                name="alias_type"
+                type="list"
+                label="ALIAS_TYPE"
+                description="ALIAS_TYPE_DESC"
+                default="new">
+            <option value="title">CREATE_ALIAS_FROM_NEW_TITLE</option>
+            <option value="alias">CREATE_ALIAS_FROM_CURRENT_ONE</option>
+        </field>
+        <field
+                name="com_k2_settings"
+                type="spacer"
+                label="K2_SETTINGS" />
+        <field
+                name="k2_clone_image"
+                type="radio"
+                class="btn-group btn-group-yesno"
+                label="K2_CLONE_IMAGE_LABEL"
+                description="K2_CLONE_IMAGE_DESC"
+                default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="re_translate"
+               type="list"
+               class="btn-group"
+               default="0"
+               multiple="multiple"
+               label="RE_TRANSLATE_EDITED_ARTICLE"
+               description="RE_TRANSLATE_EDITED_ARTICLE_DESC" >
+
+            <option value="content">Content - Articles</option>
+            <option value="k2_items">K2 - Items</option>
+            <option value="easyblog_post">Easy Blog - Entries Blog</option>
+            <option value="mijoshop_product_description">Mijoshop Product</option>
+            <option value="virtuemart_products">VirtueMart Products</option>
+            <option value="hikashop_product">Hikashop Products</option>
+        </field>
+    </fieldset>
+
+    <fieldset
+            name="permissions"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            description="JCONFIG_PERMISSIONS_DESC"
+    >
+
+        <field
+                name="rules"
+                type="rules"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                class="inputbox"
+                validate="rules"
+                filter="rules"
+                component="com_jalang"
+                section="component" />
+
+        <field
+                name="group"
+                hidden="true"
+                type="japanel"
+                function="depend">
+            <option for="translator_api_active" value="bing" hideRow="true">
+                bing_client_id,bing_client_secret
+            </option>
+            <option for="translator_api_active" value="google" hideRow="true">
+                google_browser_api_key
+            </option>
+            <option for="translator_api_active" value="duplicate" hideRow="true">
+                duplicate_language_code
+            </option>
+        </field>
+        <field type="japanel" path="administrator/components/com_jalang/asset/elements/" />
+    </fieldset>
+
+</config>

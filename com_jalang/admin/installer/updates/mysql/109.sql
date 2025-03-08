@@ -1,0 +1,1 @@
+ALTER TABLE #__associations MODIFY `key` CHAR(255);
