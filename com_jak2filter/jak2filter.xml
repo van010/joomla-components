@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+  <name>com_jak2filter</name>
+  <creationDate>Dec 1st, 2023</creationDate>
+  <copyright>Copyright 2004 - 2019 JoomlArt.com.</copyright>
+  <license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+  <author>JoomlArt</author>
+  <authorEmail>webmaster@joomlart.com</authorEmail>
+  <authorUrl>http://www.joomlart.com</authorUrl>
+  <version>1.4.0</version>
+  
+  <description><![CDATA[
+		<div align="left"><h1>JA K2 Filter Component for Joomla 2.5 and Joomla 3</h1>
+		<div style='font-weight: normal'>
+		<p><span style='color: #ff6600;'><strong>Features:</strong></span>
+		JA K2 Filter Component</p>
+		
+		<strong><span style='color: #ff0000;'>Usage Instruction:</span></strong><br />
+		<ul>
+		<li>Enable JA K2 Filter Plugin</li>
+		<li>Add Extra fields and add to products</li>
+		<li>Enable JA K2 Filter Module in Module Manager</li>
+		</ul>
+		<strong><span style='color: #ff0000;'>Upgrade Method:</span><br /></strong>
+		<ul>
+		  <li>You can install new version directly over this version. Uninstallation is not required. </li>
+		</ul>
+	
+		<span style='color: #008000;'><strong>Links:</strong></span><br />
+		<ul>
+		<li><a target="_blank" href="http://joomlart.com/documentation/joomla-component/ja-k2-filter">Documentation</a></li>
+		<li><a target='_blank' href='http://www.joomlart.com/forums/downloads.php?do=cat&id=20372'>Updates &amp; Versions</a></li>
+		<li><a target='_blank' href='http://pm.joomlart.com/browse/JAK2FILTER'>Changelog</a></li>
+		</ul>
+		<p>Copyright 2004 - 2019 <a href='http://www.joomlart.com/' title='Visit Joomlart.com!'>JoomlArt.com</a>.</p>
+		</div></div>
+		]]>	</description>
+
+  <administration>
+    <menu link="option=com_jak2filter" img="components/com_jak2filter/images/jak2fr.png">COM_JAK2FILTER</menu>
+    <files folder="admin">
+		<folder>views</folder>
+		<folder>controllers</folder>
+		<folder>models</folder>
+		<folder>elements</folder>
+		<folder>lib</folder>
+		<folder>images</folder>
+		<folder>installer</folder>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>jak2filter.php</filename>
+		<filename>uninstall.jak2filter.php</filename>
+		<filename>config.xml</filename>
+		<filename>access.xml</filename>
+    </files>
+	<languages folder="admin/language">
+		<language tag="en-GB">en-GB.com_jak2filter.sys.ini</language>
+		<language tag="en-GB">en-GB.com_jak2filter.ini</language>
+	</languages>
+  </administration>
+  <files folder="site">
+		<folder>controllers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>helpers</folder>
+		<folder>packages</folder>
+		<filename>index.html</filename>
+		<filename>jak2filter.php</filename>
+		<filename>router.php</filename>
+  </files>
+  <languages folder="site/language">
+	<language tag="en-GB">en-GB.com_jak2filter.ini</language>
+  </languages>
+  <install>
+    <sql folder="admin">
+      <file driver="mysql" charset="utf8">installer/sql/install.jak2filer.sql</file>
+    </sql>
+  </install>
+  <installfile>install.jak2filter.php</installfile>
+  <uninstallfile>uninstall.jak2filter.php</uninstallfile>
+  <scriptfile>script.jak2filter.php</scriptfile>
+	<!--DEFINITIONS FOR UPGRADING BY JAEM COMPONENT-->
+	<jaupdater>
+		<tables>
+			<table>#__jak2filter</table>
+		</tables>
+		
+		<versions folder="admin">
+			<version version="1.0.2">
+				<upgrade>installer/sql/upgrade_v1.0.2.sql</upgrade>
+				<rollback>installer/sql/downgrade_v1.0.2.sql</rollback>
+				<changelogUrl>http://pm.joomlart.com/browse/JAK2FILTER</changelogUrl>
+			</version>
+			<version version="1.0.1">
+				<changelogUrl>http://pm.joomlart.com/browse/K2FILTERCO</changelogUrl>
+			</version>
+			<version version="1.0.0">
+				<changelogUrl>http://pm.joomlart.com/browse/K2FILTERCO</changelogUrl>
+			</version>
+		</versions>
+	</jaupdater>
+    <updateservers>
+        <server type="extension" priority="1" name="JA K2 Filter">http://update.joomlart.com/service/tracking/j16/com_jak2filter.xml</server>
+    </updateservers>
+</extension>

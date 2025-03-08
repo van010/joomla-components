@@ -1,0 +1,1 @@
+ALTER TABLE `#__jak2filter_taxonomy` MODIFY `labels` VARCHAR(255);

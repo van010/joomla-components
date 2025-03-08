@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="search_configuration"
+		label="SEARCHING_CONFIGURATION_TAB"
+		description="" addfieldpath="/administrator/components/com_jak2filter/elements">
+		<field name="minium_keyword"
+			type="text"
+			default="3"
+			filter="int"
+			label="JAK2FILTER_MINIUM_KEYWORD"
+			description="JAK2FILTER_MINIUM_KEYWORD_DESC" />
+		<field name="maximum_keyword"
+			type="text"
+			default="20"
+			filter="int"
+			label="JAK2FILTER_MAXIMUM_KEYWORD"
+			description="JAK2FILTER_MAXIMUM_KEYWORD_DESC" />
+		<field name="fields_keyword"
+			type="list"
+			size="9"
+			multiple="multiple"
+			label="JAK2FILTER_SEARCH_IN"
+			description="JAK2FILTER_SEARCH_IN_DESC">
+			<option value="i.title">Title</option>
+			<option value="i.introtext">Intro Text</option>
+			<option value="i.fulltext">Full Text</option>
+			<option value="i.image_caption">Image Caption</option>
+			<option value="i.image_credits">Image Credits</option>
+			<option value="i.video_caption">Video Caption</option>
+			<option value="i.video_credits">Video Credits</option>
+			<option value="i.metadesc">Meta Description</option>
+			<option value="i.metakey">Meta Keyword</option>
+			<option value="i.extra_fields_search">Extra Fields Search</option>
+		</field>
+		<field
+			name="show_items_result"
+			type="radio"
+			default="0"
+			label="JAK2FILTER_SEARCH_SHOW_ITEM_RESULT"
+			description="JAK2FILTER_SEARCH_SHOW_ITEM_RESULT_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field
+			name="range_option"
+			type="radio"
+			default="0"
+			label="JAK2FILTER_SEARCH_RANGE_OPTION"
+			description="JAK2FILTER_SEARCH_RANGE_OPTION_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="tags_search_mode"
+			type="list"
+			size="2"
+			label="TAGS_SEARCH_MODE"
+			default="any"
+			description="TAGS_SEARCH_MODE_DESC">
+			<option value="any">MATCH_ANY</option>
+			<option value="all">MATCH_ALL</option>			
+		</field>
+        <field name="extra_fields_search_mode"
+               type="extrafieldssearch"
+               multiple="multiple"
+               label="EXTRA_FIELD_SEARCH_MODE"
+               description="EXTRA_FIELD_SEARCH_MODE_DESC"/>
+        <field name="extra_fields_sort_mode"
+               type="extrafieldssearch"
+               subtype="sort"
+               multiple="multiple"
+               label="EXTRA_FIELD_SORT_MODE"
+               description="EXTRA_FIELD_SORT_MODE_DESC"/>
+        <field name="extra_fields_data_type"
+               type="extrafieldssearch"
+               subtype="datatype"
+               multiple="multiple"
+               label="EXTRA_FIELD_DATA_TYPE"
+               description="EXTRA_FIELD_DATA_TYPE_DESC"/>
+	</fieldset>
+	<fieldset name="relevance-settings" label="RELEVANCESETTINGS_LABEL" description="RELEVANCESETTINGS_DESC">
+		<field name="score_title" type="text" default="10" filter="int" label="SCORE_TITLE_LABEL" description="SCORE_TITLE_DESC" />
+		<field name="score_metadesc" type="text" default="9" filter="int" label="SCORE_METADESC_LABEL" description="SCORE_METADESC_DESC" />
+		<field name="score_metakey" type="text" default="9" filter="int" label="SCORE_METAKEY_LABEL" description="SCORE_METAKEY_DESC" />
+		<field name="score_introtext" type="text" default="8" filter="int" label="SCORE_INTROTEXT_LABEL" description="SCORE_INTROTEXT_DESC" />
+		<field name="score_fulltext" type="text" default="7" filter="int" label="SCORE_FULLTEXT_LABEL" description="SCORE_FULLTEXT_DESC" />
+		<field name="score_image_caption" type="text" default="6" filter="int" label="SCORE_IMAGE_CAPTION_LABEL" description="SCORE_IMAGE_CAPTION_DESC" />
+		<field name="score_image_credits" type="text" default="6" filter="int" label="SCORE_IMAGE_CREDITS_LABEL" description="SCORE_IMAGE_CREDITS_DESC" />
+		<field name="score_video_caption" type="text" default="6" filter="int" label="SCORE_VIDEO_CAPTION_LABEL" description="SCORE_VIDEO_CAPTION_DESC" />
+		<field name="score_video_credits" type="text" default="6" filter="int" label="SCORE_VIDEO_CREDITS_LABEL" description="SCORE_VIDEO_CREDITS_DESC" />
+		<field name="score_extra_fields_search" type="text" default="3" filter="int" label="SCORE_EXTRA_FIELDS_SEARCH_LABEL" description="SCORE_EXTRA_FIELDS_SEARCH_DESC" />
+	</fieldset>
+	<fieldset name="component"
+		label="INDEXING_DATA_TAB"
+		description="">		
+		<field
+			name="indexing_onsave"
+			type="radio"
+			default="1"
+			label="UPDATE_INDEXING_EVENT"
+			description="UPDATE_INDEXING_EVENT_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="indexing_cron_key" type="text"
+			default="indexing"
+			label="CRON_JOB_KEY"
+			description="CRON_JOB_KEY_DESC" />
+		
+		<field
+			name="indexing_cron"
+			type="radio"
+			default="1"
+			label="UPDATE_INDEXING_CRON"
+			description="UPDATE_INDEXING_CRON_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="indexing_interval" type="text"
+			default="900"
+			label="INDEXING_DATA_INTERVAL"
+			description="INDEXING_DATA_INTERVAL_DESC" />
+	</fieldset>
+	<fieldset name="category-item-layout" label="Search Result Item Layout" addfieldpath="/administrator/components/com_k2/elements">
+			<param name="" type="header" default="K2_LAYOUT_TEMPLATE" label="" description=""/>
+			<field name="theme" type="template" default="default" label="K2_SELECT_A_TEMPLATE"/>
+			<field name="" type="header" default="K2_LAYOUT_GRID" label="" description=""/>
+			<field name="num_leading_items" type="text" size="4" default="0" label="K2_LEADING_COUNT" description="K2_NUMBER_OF_ITEMS_TO_DISPLAY_AS_LEADING"/>
+			<field name="num_leading_columns" type="text" size="4" default="1" label="K2_COLUMNS_FOR_LEADING" description=""/>
+			<field name="leadingImgSize" type="list" default="Large" label="K2_IMAGE_SIZE_FOR_LEADING_ITEMS" description="K2_YOU_CAN_OVERRIDE_THE_GLOBAL_DIMENSIONS_FOR_EACH_SIZE_BY_ADJUSTING_THE_RELATED_SETTING_IN_THE_ITEM_IMAGE_OPTIONS_PANE_BELOW">
+				<option value="XSmall">K2_XSMALL</option>
+				<option value="Small">K2_SMALL</option>
+				<option value="Medium">K2_MEDIUM</option>
+				<option value="Large">K2_LARGE</option>
+				<option value="XLarge">K2_XLARGE</option>
+				<option value="none">K2_NO_IMAGE</option>
+			</field>
+			<field name="@spacer" type="spacer" default="" label="" description=""/>
+			<field name="num_primary_items" type="text" size="4" default="9" label="K2_PRIMARY_COUNT" description="K2_NUMBER_OF_ITEMS_TO_DISPLAY_AS_PRIMARY"/>
+			<field name="num_primary_columns" type="text" size="4" default="3" label="K2_COLUMNS_FOR_PRIMARY" description=""/>
+			<field name="primaryImgSize" type="list" default="Medium" label="K2_IMAGE_SIZE_FOR_PRIMARY_ITEMS" description="K2_YOU_CAN_OVERRIDE_THE_GLOBAL_DIMENSIONS_FOR_EACH_SIZE_BY_ADJUSTING_THE_RELATED_SETTING_IN_THE_ITEM_IMAGE_OPTIONS_PANE_BELOW">
+				<option value="XSmall">K2_XSMALL</option>
+				<option value="Small">K2_SMALL</option>
+				<option value="Medium">K2_MEDIUM</option>
+				<option value="Large">K2_LARGE</option>
+				<option value="XLarge">K2_XLARGE</option>
+				<option value="none">K2_NO_IMAGE</option>
+			</field>
+			<field name="@spacer" type="spacer" default="" label="" description=""/>
+			<field name="num_secondary_items" type="text" size="4" default="0" label="K2_SECONDARY_COUNT" description="K2_NUMBER_OF_ITEMS_TO_DISPLAY_AS_SECONDARY"/>
+			<field name="num_secondary_columns" type="text" size="4" default="1" label="K2_COLUMNS_FOR_SECONDARY" description=""/>
+			<field name="secondaryImgSize" type="list" default="Small" label="K2_IMAGE_SIZE_FOR_SECONDARY_ITEMS" description="K2_YOU_CAN_OVERRIDE_THE_GLOBAL_DIMENSIONS_FOR_EACH_SIZE_BY_ADJUSTING_THE_RELATED_SETTING_IN_THE_ITEM_IMAGE_OPTIONS_PANE_BELOW">
+				<option value="XSmall">K2_XSMALL</option>
+				<option value="Small">K2_SMALL</option>
+				<option value="Medium">K2_MEDIUM</option>
+				<option value="Large">K2_LARGE</option>
+				<option value="XLarge">K2_XLARGE</option>
+				<option value="none">K2_NO_IMAGE</option>
+			</field>
+			<field name="@spacer" type="spacer" default="" label="" description=""/>
+			<field name="num_links" type="text" size="4" default="0" label="K2_LINKS_COUNT" description="K2_NUMBER_OF_ITEMS_TO_DISPLAY_AS_LINKS"/>
+			<field name="num_links_columns" type="text" size="4" default="1" label="K2_COLUMNS_FOR_LINKS" description=""/>
+			<field name="linksImgSize" type="list" default="XSmall" label="K2_IMAGE_SIZE_FOR_LINK_ITEMS" description="K2_YOU_CAN_OVERRIDE_THE_GLOBAL_DIMENSIONS_FOR_EACH_SIZE_BY_ADJUSTING_THE_RELATED_SETTING_IN_THE_ITEM_IMAGE_OPTIONS_PANE_BELOW">
+				<option value="XSmall">K2_XSMALL</option>
+				<option value="Small">K2_SMALL</option>
+				<option value="Medium">K2_MEDIUM</option>
+				<option value="Large">K2_LARGE</option>
+				<option value="XLarge">K2_XLARGE</option>
+				<option value="none">K2_NO_IMAGE</option>
+			</field>
+			<field name="" type="header" default="K2_OTHER_LAYOUT_OPTIONS" label="" description=""/>
+			<field name="enableHighlightSearchTerm" type="radio" default="0" label="JAK2FILTER_HIGHLIGHT_SEARCH_TERM" description="JAK2FILTER_HIGHLIGHT_SEARCH_TERM_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<!--<field name="catCatalogMode" type="list" default="0" label="K2_CATALOG_MODE" description="K2_IF_YOU_SELECT_YES_THEN_ONLY_THE_ITEMS_DIRECTLY_BELONGING_TO_THIS_CATEGORY_WILL_BE_RETRIEVED_IF_YOU_SELECT_NO_THEN_ITEMS_FROM_ALL_SUBCATEGORIES_WILL_BE_RETRIEVED_SETTING_THIS_OPTION_TO_NO_IS_IDEAL_FOR_NEWSPORTALMAGAZINEBLOG_LAYOUTS">
+				<option value="0">K2_NO</option>
+				<option value="1">K2_YES</option>
+			</field>
+			<field name="catFeaturedItems" type="list" default="1" label="K2_FEATURED_ITEMS" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+				<option value="2">K2_SHOW_ONLY_FEATURED_ITEMS</option>
+			</field>-->
+
+			<field name="catFeedLink" type="radio" default="0" label="K2_RSS_FEED_LINK" description="">
+				<option value="0">K2_DISABLE</option>
+				<option value="1">K2_ENABLE</option>
+			</field>
+			<field name="catFeedIcon" type="radio" default="0" label="K2_RSS_FEED_ICON" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catOrdering" type="k2orderfield" default="" label="K2_ITEM_ORDERING" description="">
+				<option value="">K2_DEFAULT</option>
+			</field>
+			<field name="catPagination" type="list" default="2" label="K2_PAGINATION" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+				<option value="2">K2_AUTO</option>
+			</field>
+			<field name="catPaginationResults" type="radio" default="1" label="K2_PAGINATION_RESULTS" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+		</fieldset>
+		<fieldset name="item-view-options-listings" label="Item View Options" addfieldpath="/administrator/components/com_k2/elements">
+			<field name="catItemTitle" type="radio" default="1" label="K2_TITLE" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemTitleLinked" type="radio" default="1" label="K2_LINK_ON_TITLE" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemFeaturedNotice" type="radio" default="0" label="K2_FEATURED_NOTICE_NEXT_TO_TITLE" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemAuthor" type="radio" default="1" label="K2_AUTHOR" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemDateCreated" type="radio" default="1" label="K2_ITEM_CREATED_DATE_AND_TIME" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemRating" type="radio" default="0" label="K2_RATING_VOTING" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<!--<field name="catItemImage" type="radio" default="1" label="K2_IMAGE" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>-->
+			<field name="catItemIntroText" type="radio" default="1" label="K2_INTROTEXT" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemIntroTextWordLimit" type="text" default="" size="4" label="K2_INTROTEXT_WORD_LIMIT" description="K2_IF_THIS_OPTION_IS_ENABLED_ALL_HTML_TAGS_IN_THE_INTROTEXT_WILL_BE_CLEANED_UP_TO_MAKE_SURE_THE_SITE_MARKUP_WILL_NOT_BREAK"/>
+			<field name="catItemExtraFields" type="radio" default="0" label="K2_EXTRA_FIELDS" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemHits" type="radio" default="0" label="K2_HITS" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemCategory" type="radio" default="1" label="K2_CATEGORY" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemTags" type="radio" default="1" label="K2_TAGS" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<!--<field name="catItemAttachments" type="radio" default="0" label="K2_ATTACHMENTS" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemAttachmentsCounter" type="radio" default="0" label="K2_ATTACHMENTS_COUNTER" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemVideo" type="radio" default="0" label="K2_MEDIA" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemVideoWidth" type="text" default="" size="4" label="K2_VIDEO_WIDTH" description=""/>
+			<field name="catItemVideoHeight" type="text" default="" size="4" label="K2_VIDEO_HEIGHT" description=""/>
+			<field name="catItemAudioWidth" type="text" default="" size="4" label="K2_AUDIO_WIDTH" description=""/>
+			<field name="catItemAudioHeight" type="text" default="" size="4" label="K2_AUDIO_HEIGHT" description=""/>
+			<field name="catItemVideoAutoPlay" type="radio" default="0" label="K2_MEDIA_AUTOPLAY" description="">
+				<option value="0">K2_NO</option>
+				<option value="1">K2_YES</option>
+			</field>
+			<field name="catItemImageGallery" type="radio" default="0" label="K2_IMAGE_GALLERY" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>-->
+			<field name="catItemDateModified" type="radio" default="0" label="K2_ITEM_MODIFIED_DATE_AND_TIME" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemReadMore" type="radio" default="0" label="K2_READ_MORE_LINK" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="catItemCommentsAnchor" type="radio" default="0" label="K2_ANCHOR_LINK_WITH_COMMENTS_COUNTER_TO_ITEMS_COMMENT_FORM" description="">
+				<option value="0">K2_HIDE</option>
+				<option value="1">K2_SHOW</option>
+			</field>
+			<field name="" type="header" default="K2_ADVANCED" label="" description=""/>
+			<field name="catItemK2Plugins" type="radio" default="1" label="K2_ENABLE_K2_PLUGINS" description="">
+				<option value="0">K2_NO</option>
+				<option value="1">K2_YES</option>
+			</field>
+		</fieldset>
+		
+		<fieldset name="extra-fields-options-listings" label="JAK2FILTER_EXTRA_FIELDS_OPTIONS_LISTINGS" addfieldpath="/administrator/components/com_jak2filter/elements">			
+			<field name="selectedExtraFieldsType" type="radio" default="0" label="JAK2FILTER_SELECTED_EXTRA_FIELDS_TYPE_OPTIONS_LISTINGS" description="">
+				<option value="0">JAK2FILTER_SELECT_ALL_EXTRA_FIELDS_OPTIONS_LISTINGS</option>
+				<option value="1">JAK2FILTER_SELECT_ONE_OR_MORE_EXTRA_FIELDS_OPTIONS_LISTINGS</option>
+			</field>
+			<field showon="selectedExtraFieldsType:1" name="selectedExtraFields" type="extrafields" multiple="multiple" label="JAK2FILTER_SELECTED_EXTRA_FIELDS_TYPE_OPTIONS_LISTINGS" />
+		</fieldset>
+
+	<fieldset
+			name="permissions"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			description="JCONFIG_PERMISSIONS_DESC"
+			>
+
+		<field
+				name="rules"
+				type="rules"
+				label="JCONFIG_PERMISSIONS_LABEL"
+				validate="rules"
+				filter="rules"
+				component="com_jak2filter"
+				section="component" />
+	</fieldset>
+</config>
